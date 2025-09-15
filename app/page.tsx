@@ -1,103 +1,139 @@
-import Image from "next/image";
+import { Mail, Github, Linkedin } from "lucide-react";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const tech = [
+    { name: "Java", src: "/tech/java.svg" },
+    { name: "HTML", src: "/tech/html.svg" },
+    { name: "PHP", src: "/tech/php.svg" },
+    { name: "Javascript", src: "/tech/javascript.svg" },
+    { name: "PostgreSQL", src: "/tech/postgresql.svg" },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  return (
+    <>
+      <header
+        id="top"
+        role="banner"
+        className="sticky top-0 z-50 backdrop-blur bg-background/70"
+      >
+        <div className="mx-auto max-w-screen-xl px-4 py-3">
+          <nav
+            aria-label="Principal"
+            className="flex items-center justify-between gap-6"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <a href="#hero" className="font-semibold tracking-wide">
+              EnrMar
+            </a>
+            <ul className="flex items-center gap-4 text-sm">
+              <li><a href="#hero" className="hover:opacity-80">About</a></li>
+              <li><a href="#proyectos" className="hover:opacity-80">Projects</a></li>
+              <li><a href="#tecnologias" className="hover:opacity-80">Tech</a></li>
+              <li><a href="#contacto" className="hover:opacity-80">Contact</a></li>
+            </ul>
+          </nav>
         </div>
+      </header>
+
+      <main
+        id="contenido"
+        role="main"
+        className="min-h-screen flex flex-col items-center text-center bg-[#1e1e1e] text-foreground px-4"
+      >
+        <section id="hero" aria-labelledby="hero-title" className="py-20 max-w-3xl">
+          <h1 id="hero-title" className="text-4xl md:text-5xl font-bold">
+            Enrique Martinez
+          </h1>
+          <p className="mt-4 text-base md:text-lg">
+            I'm a Computer Systems Engineer Student. Right now specializing
+            in Software Engineering at Instituto Tecnologico de Morelia.
+          </p>
+          <p className="mt-2 text-base md:text-lg">
+            I've participated in one project as main developer and tester,
+            and I'm currently working on a project for the Centro de Atencion Animal
+            de Morelia (CAAM) as main developer.
+          </p>
+        </section>
+
+        <section id="proyectos" aria-labelledby="proyectos-title" className="py-16 max-w-4xl w-full">
+          <h2 id="proyectos-title" className="text-2xl md:text-3xl font-semibold">
+            Projects
+          </h2>
+
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-1 gap-6 justify-items-center">
+            <article
+              aria-labelledby="p1-title"
+              className="rounded-xl border border-foreground/20 bg-white/5 p-6 shadow-md hover:shadow-lg transition w-full max-w-md"
+            >
+              <header>
+                <h3 id="p1-title" className="text-lg font-semibold">Projexus</h3>
+              </header>
+              <p className="mt-2 text-sm">
+                A web application to manage Project Fair events, from submitting a project as a User
+                to evaluating projects as a judge. It was based and planned for ICTI.
+              </p>
+              <p className="mt-2 text-sm">Worked as main developer and tester.</p>
+              <img src="/Project.png" alt="Screenshot" className="mt-4 rounded-lg" />
+            </article>
+          </div>
+        </section>
+
+        <section id="tecnologias" aria-labelledby="tecnologias-title" className="py-16 max-w-4xl w-full">
+          <h2 id="tecnologias-title" className="text-2xl md:text-3xl font-semibold">
+            Tech Stack
+          </h2>
+          <ul className="mt-6 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 justify-items-center">
+            {tech.map((t) => (
+              <li key={t.name} className="group flex flex-col items-center gap-2">
+                <span className="inline-flex h-16 w-16 items-center justify-center rounded-xl border border-foreground/15 bg-white/5 transition group-hover:scale-110">
+                  <img src={t.src} alt={t.name} className="h-10 w-10 object-contain invert opacity-90" />
+                </span>
+                <span className="text-xs opacity-90">{t.name}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section id="contacto" aria-labelledby="contacto-title" className="py-16 max-w-3xl mx-auto text-center">
+          <h2 id="contacto-title" className="text-2xl md:text-3xl font-semibold">Contact</h2>
+          <div className="mt-6 space-y-4 text-sm md:text-base">
+            <p className="flex items-center justify-center gap-2">
+              <Mail className="h-5 w-5 text-purple-400" />
+              <a
+                href="mailto:enrimar0217@gmail.com"
+                className="text-purple-400 hover:text-purple-300 hover:underline underline-offset-4 transition"
+              >
+                enrimar0217@gmail.com
+              </a>
+            </p>
+            <p className="flex items-center justify-center gap-2">
+              <Github className="h-5 w-5 text-purple-400" />
+              <a
+                href="https://github.com/EnrMar17"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300 hover:underline underline-offset-4 transition"
+              >
+                EnrMar17
+              </a>
+            </p>
+            <p className="flex items-center justify-center gap-2">
+              <Linkedin className="h-5 w-5 text-purple-400" />
+              <a
+                href="https://www.linkedin.com/in/enrique-martinez-100895171"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300 hover:underline underline-offset-4 transition"
+              >
+                Enrique Martinez
+              </a>
+            </p>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer role="contentinfo" className="border-t border-foreground/20 bg-[#1e1e1e] text-right py-6">
+        <p className="text-sm">© {new Date().getFullYear()} EnrMar</p>
       </footer>
-    </div>
+    </>
   );
 }
