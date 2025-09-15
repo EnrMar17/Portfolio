@@ -45,13 +45,10 @@ export default function Home() {
             Enrique Martinez
           </h1>
           <p className="mt-4 text-base md:text-lg">
-            I am a Computer Systems Engineer Student. Right now specializing
-            in Software Engineering at Instituto Tecnologico de Morelia.
+            {"I am a Computer Systems Engineer Student. Right now specializing in Software Engineering at Instituto Tecnologico de Morelia."}
           </p>
           <p className="mt-2 text-base md:text-lg">
-            I have participated in one project as main developer and tester,
-            and I'm currently working on a project for the Centro de Atencion Animal
-            de Morelia (CAAM) as main developer.
+            {"I have participated in one project as main developer and tester, and I'm currently working on a project for the Centro de Atencion Animal de Morelia (CAAM) as main developer. "}
           </p>
         </section>
 
@@ -69,8 +66,7 @@ export default function Home() {
                 <h3 id="p1-title" className="text-lg font-semibold">Projexus</h3>
               </header>
               <p className="mt-2 text-sm">
-                A web application to manage Project Fair events, from submitting a project as a User
-                to evaluating projects as a judge. It was based and planned for ICTI.
+                {"A web application to manage Project Fair events, from submitting a project as a User to evaluating projects as a judge. It was based and planned for ICTI."}
               </p>
               <p className="mt-2 text-sm">Worked as main developer and tester.</p>
               <Image src="/Project.png" alt="Screenshot" width={900} height={520} className="mt-4 rounded-lg" priority
