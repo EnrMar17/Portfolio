@@ -1,4 +1,5 @@
 import { Mail, Github, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   const tech = [
@@ -26,16 +27,16 @@ export default function Home() {
             </a>
             <ul className="flex items-center gap-4 text-sm">
               <li><a href="#hero" className="hover:opacity-80">About</a></li>
-              <li><a href="#proyectos" className="hover:opacity-80">Projects</a></li>
-              <li><a href="#tecnologias" className="hover:opacity-80">Tech</a></li>
-              <li><a href="#contacto" className="hover:opacity-80">Contact</a></li>
+              <li><a href="#projects" className="hover:opacity-80">Projects</a></li>
+              <li><a href="#tech" className="hover:opacity-80">Tech</a></li>
+              <li><a href="#contact" className="hover:opacity-80">Contact</a></li>
             </ul>
           </nav>
         </div>
       </header>
 
       <main
-        id="contenido"
+        id="content"
         role="main"
         className="min-h-screen flex flex-col items-center text-center bg-[#1e1e1e] text-foreground px-4"
       >
@@ -44,18 +45,18 @@ export default function Home() {
             Enrique Martinez
           </h1>
           <p className="mt-4 text-base md:text-lg">
-            I'm a Computer Systems Engineer Student. Right now specializing
+            I am a Computer Systems Engineer Student. Right now specializing
             in Software Engineering at Instituto Tecnologico de Morelia.
           </p>
           <p className="mt-2 text-base md:text-lg">
-            I've participated in one project as main developer and tester,
+            I have participated in one project as main developer and tester,
             and I'm currently working on a project for the Centro de Atencion Animal
             de Morelia (CAAM) as main developer.
           </p>
         </section>
 
-        <section id="proyectos" aria-labelledby="proyectos-title" className="py-16 max-w-4xl w-full">
-          <h2 id="proyectos-title" className="text-2xl md:text-3xl font-semibold">
+        <section id="projects" aria-labelledby="projects-title" className="py-16 max-w-4xl w-full">
+          <h2 id="projects-title" className="text-2xl md:text-3xl font-semibold">
             Projects
           </h2>
 
@@ -72,20 +73,21 @@ export default function Home() {
                 to evaluating projects as a judge. It was based and planned for ICTI.
               </p>
               <p className="mt-2 text-sm">Worked as main developer and tester.</p>
-              <img src="/Project.png" alt="Screenshot" className="mt-4 rounded-lg" />
+              <Image src="/Project.png" alt="Screenshot" width={900} height={520} className="mt-4 rounded-lg" priority
+              />
             </article>
           </div>
         </section>
 
-        <section id="tecnologias" aria-labelledby="tecnologias-title" className="py-16 max-w-4xl w-full">
-          <h2 id="tecnologias-title" className="text-2xl md:text-3xl font-semibold">
+        <section id="tech" aria-labelledby="tech-title" className="py-16 max-w-4xl w-full">
+          <h2 id="tech-title" className="text-2xl md:text-3xl font-semibold">
             Tech Stack
           </h2>
           <ul className="mt-6 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 justify-items-center">
             {tech.map((t) => (
               <li key={t.name} className="group flex flex-col items-center gap-2">
                 <span className="inline-flex h-16 w-16 items-center justify-center rounded-xl border border-foreground/15 bg-white/5 transition group-hover:scale-110">
-                  <img src={t.src} alt={t.name} className="h-10 w-10 object-contain invert opacity-90" />
+                  <Image src={t.src} alt={t.name} width={40} height={40} className="h-10 w-10 object-contain dark:invert opacity-90 group-hover:opacity-100 transition" loading="lazy" />
                 </span>
                 <span className="text-xs opacity-90">{t.name}</span>
               </li>
@@ -93,8 +95,8 @@ export default function Home() {
           </ul>
         </section>
 
-        <section id="contacto" aria-labelledby="contacto-title" className="py-16 max-w-3xl mx-auto text-center">
-          <h2 id="contacto-title" className="text-2xl md:text-3xl font-semibold">Contact</h2>
+        <section id="contact" aria-labelledby="contact-title" className="py-16 max-w-3xl mx-auto text-center">
+          <h2 id="contact-title" className="text-2xl md:text-3xl font-semibold">Contact</h2>
           <div className="mt-6 space-y-4 text-sm md:text-base">
             <p className="flex items-center justify-center gap-2">
               <Mail className="h-5 w-5 text-purple-400" />
