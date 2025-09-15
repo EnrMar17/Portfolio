@@ -15,7 +15,7 @@ export default function Home() {
       <header
         id="top"
         role="banner"
-        className="sticky top-0 z-50 backdrop-blur bg-background/70"
+        className="sticky top-0 z-50 backdrop-blur bg-purple-950/70"
       >
         <div className="mx-auto max-w-screen-xl px-4 py-3">
           <nav
@@ -38,7 +38,7 @@ export default function Home() {
       <main
         id="content"
         role="main"
-        className="min-h-screen flex flex-col items-center text-center bg-[#1e1e1e] text-foreground px-4"
+        className="min-h-screen flex flex-col items-center text-center bg-background text-foreground px-4"
       >
         <section id="hero" aria-labelledby="hero-title" className="py-20 max-w-3xl">
           <h1 id="hero-title" className="text-4xl md:text-5xl font-bold">
@@ -129,7 +129,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer role="contentinfo" className="border-t border-foreground/20 bg-[#1e1e1e] text-right py-6">
+      <footer role="contentinfo" className="border-t border-foreground/20 bg-background text-right py-6">
         <p className="text-sm">© {new Date().getFullYear()} EnrMar</p>
       </footer>
     </>
